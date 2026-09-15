@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trazos — Contacto</title>
+<link rel="stylesheet" href="estilosIA.css">
+</head>
+<body>
+
+<header class="barra-nav">
+  <div class="contenedor">
+    <a href="index.html" class="logo-sitio">Traz<span>o</span>s</a>
+    <nav>
+      <ul class="enlaces-nav">
+        <li><a href="index.html">Catálogo</a></li>
+        <li><a href="sobre.html">Quién mantiene el sitio</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="contenedor">
+    <h1>Escribinos</h1>
+    <svg class="trazo" viewBox="0 0 92 14" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M2 10 C 20 2, 35 14, 50 6 S 80 2, 90 8" stroke="#C1502E" stroke-width="3" fill="none" stroke-linecap="round"/>
+    </svg>
+    <p>¿Un encargo, una consulta o simplemente quieres saludar? Completá el formulario.</p>
+  </div>
+</section>
+
+<section class="seccion contenedor">
+  <form class="tarjeta-postal" action="mailto:contacto@trazos-dibujos.com" method="post" enctype="text/plain">
+
+    <div class="campo">
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+    </div>
+
+    <div class="campo">
+      <label for="email">Correo electrónico</label>
+      <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required>
+    </div>
+
+    <div class="campo">
+      <label for="asunto">Asunto</label>
+      <select id="asunto" name="asunto">
+        <option value="consulta">Consulta general</option>
+        <option value="encargo">Pedido de dibujo</option>
+        <option value="colaboracion">Propuesta de colaboración</option>
+      </select>
+    </div>
+
+    <div class="campo">
+      <label for="mensaje">Mensaje</label>
+      <textarea id="mensaje" name="mensaje" placeholder="Contanos qué necesitás..." required></textarea>
+    </div>
+
+    <button type="submit" class="boton-principal">Enviar mensaje</button>
+  </form>
+</section>
+
+<footer class="pie">
+  <div class="contenedor">
+    <p>Trazos — un rincón para compartir dibujos. Hecho a mano, sin JavaScript.</p>
+  </div>
+</footer>
+
+</body>
+</html>

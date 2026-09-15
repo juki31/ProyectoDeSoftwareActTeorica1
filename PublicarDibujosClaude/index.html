@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trazos — Catálogo de dibujos</title>
+<link rel="stylesheet" href="estilosIA.css">
+</head>
+<body>
+
+<header class="barra-nav">
+  <div class="contenedor">
+    <a href="index.html" class="logo-sitio">Traz<span>o</span>s</a>
+    <nav>
+      <ul class="enlaces-nav">
+        <li><a href="index.html">Catálogo</a></li>
+        <li><a href="sobre.html">Quién mantiene el sitio</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="contenedor">
+    <h1>Un cuaderno de bocetos abierto</h1>
+    <svg class="trazo" viewBox="0 0 92 14" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M2 10 C 20 2, 35 14, 50 6 S 80 2, 90 8" stroke="#C1502E" stroke-width="3" fill="none" stroke-linecap="round"/>
+    </svg>
+    <p>Caricaturas, paisajes y animé dibujados a mano y subidos tal como salen del cuaderno. Elegí una categoría para mirar la galería.</p>
+  </div>
+</section>
+
+<section class="seccion contenedor" id="catalogo">
+  <h2>Catálogo de dibujos</h2>
+
+  <div class="catalogo">
+
+    <!-- Controles de pestañas (sin JavaScript) -->
+    <input type="radio" name="categoria" id="tab-caricaturas" class="entrada-pestana" checked>
+    <input type="radio" name="categoria" id="tab-paisajes" class="entrada-pestana">
+    <input type="radio" name="categoria" id="tab-anime" class="entrada-pestana">
+
+    <div class="pestanas" role="tablist" aria-label="Categorías de dibujos">
+      <label for="tab-caricaturas">Caricaturas</label>
+      <label for="tab-paisajes">Paisajes</label>
+      <label for="tab-anime">Animé</label>
+    </div>
+
+    <div class="galeria">
+
+      <div class="panel panel-caricaturas">
+        <figure class="marco">
+          <img src="imágenes/caricatura1.png" alt="Caricatura de un personaje con lentes y sombrero de fiesta">
+          <figcaption>Caricatura — Retrato con lentes</figcaption>
+        </figure>
+        <figure class="marco">
+          <img src="imágenes/caricatura2.png" alt="Caricatura de un personaje con gorro puntiagudo">
+          <figcaption>Caricatura — Personaje con gorro</figcaption>
+        </figure>
+      </div>
+
+      <div class="panel panel-paisajes">
+        <figure class="marco">
+          <img src="imágenes/paisaje1.png" alt="Paisaje de montañas con sol al amanecer">
+          <figcaption>Paisaje — Montañas al amanecer</figcaption>
+        </figure>
+        <figure class="marco">
+          <img src="imágenes/paisaje2.png" alt="Paisaje de campo con árboles y sol">
+          <figcaption>Paisaje — Campo con árboles</figcaption>
+        </figure>
+      </div>
+
+      <div class="panel panel-anime">
+        <figure class="marco">
+          <img src="imágenes/anime1.png" alt="Rostro estilo animé con ojos grandes">
+          <figcaption>Animé — Retrato de ojos grandes</figcaption>
+        </figure>
+        <figure class="marco">
+          <img src="imágenes/anime2.png" alt="Rostro estilo animé con cabello puntiagudo">
+          <figcaption>Animé — Cabello puntiagudo</figcaption>
+        </figure>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="pie">
+  <div class="contenedor">
+    <p>Trazos — un rincón para compartir dibujos. Hecho a mano, sin JavaScript.</p>
+  </div>
+</footer>
+
+</body>
+</html>

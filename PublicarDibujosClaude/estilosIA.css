@@ -1,0 +1,385 @@
+/* =========================================================
+   TRAZOS — hoja de estilos
+   Paleta "cuaderno de bocetos": papel kraft, tinta, pino y ocre.
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Work+Sans:wght@400;500;600&display=swap');
+
+:root{
+  --papel: #F1E9D8;
+  --papel-oscuro: #E4D9C2;
+  --tinta: #2A2723;
+  --pino: #2F6F62;
+  --pino-oscuro: #204F45;
+  --ocre: #D6A93B;
+  --sienna: #C1502E;
+  --gris-lapiz: #7A7468;
+  --blanco-polaroid: #FFFDF8;
+  --sombra: rgba(42, 39, 35, 0.18);
+
+  --fuente-titulo: 'Bricolage Grotesque', 'Segoe UI', sans-serif;
+  --fuente-texto: 'Work Sans', 'Segoe UI', sans-serif;
+}
+
+*{ box-sizing: border-box; }
+
+html{ scroll-behavior: smooth; }
+
+body{
+  margin: 0;
+  font-family: var(--fuente-texto);
+  color: var(--tinta);
+  background-color: var(--papel);
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(42,39,35,0.05) 1px, transparent 0);
+  background-size: 22px 22px;
+  line-height: 1.55;
+}
+
+a{ color: inherit; }
+
+img{ max-width: 100%; display: block; }
+
+.contenedor{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ---------- Barra de navegación ---------- */
+.barra-nav{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--tinta);
+  border-bottom: 4px solid var(--ocre);
+}
+
+.barra-nav .contenedor{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
+  gap: 0.8rem;
+}
+
+.logo-sitio{
+  font-family: var(--fuente-titulo);
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--papel);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+
+.logo-sitio span{
+  color: var(--ocre);
+}
+
+.enlaces-nav{
+  list-style: none;
+  display: flex;
+  gap: 1.9rem;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.enlaces-nav a{
+  color: var(--papel);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.98rem;
+  padding: 0.3rem 0.1rem;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.enlaces-nav a:hover,
+.enlaces-nav a:focus-visible{
+  border-color: var(--ocre);
+  color: var(--ocre);
+}
+
+/* ---------- Encabezado / Hero ---------- */
+.hero{
+  padding: 3.4rem 0 2.4rem;
+  border-bottom: 1px solid var(--papel-oscuro);
+}
+
+.hero h1{
+  font-family: var(--fuente-titulo);
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  margin: 0 0 0.6rem;
+  line-height: 1.05;
+}
+
+.hero p{
+  max-width: 46ch;
+  color: var(--gris-lapiz);
+  font-size: 1.08rem;
+  margin: 0;
+}
+
+.trazo{
+  width: 92px;
+  height: 14px;
+  margin: 1.1rem 0 1.4rem;
+}
+
+/* ---------- Sección genérica ---------- */
+.seccion{
+  padding: 2.6rem 0 3.6rem;
+}
+
+.seccion > h2{
+  font-family: var(--fuente-titulo);
+  font-size: 1.7rem;
+  margin-bottom: 1.4rem;
+}
+
+/* ---------- Catálogo: pestañas sin JavaScript ---------- */
+.catalogo{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+/* inputs ocultos accesibles */
+.entrada-pestana{
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.pestanas{
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex: 0 0 200px;
+}
+
+.pestanas label{
+  display: block;
+  cursor: pointer;
+  padding: 0.85rem 1.1rem;
+  background: var(--blanco-polaroid);
+  border: 2px solid var(--tinta);
+  border-right-width: 6px;
+  font-weight: 600;
+  font-size: 0.98rem;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.pestanas label:hover{
+  transform: translateX(4px);
+}
+
+.pestanas label:focus-visible{
+  outline: 3px solid var(--pino);
+  outline-offset: 2px;
+}
+
+/* estado activo de cada pestaña, dirigido por :checked */
+#tab-caricaturas:checked ~ .pestanas label[for="tab-caricaturas"],
+#tab-paisajes:checked ~ .pestanas label[for="tab-paisajes"],
+#tab-anime:checked ~ .pestanas label[for="tab-anime"]{
+  background: var(--pino);
+  color: var(--papel);
+  border-color: var(--pino-oscuro);
+  transform: translateX(4px);
+}
+
+.galeria{
+  flex: 1 1 480px;
+  min-width: 0;
+}
+
+.panel{
+  display: none;
+}
+
+#tab-caricaturas:checked ~ .galeria .panel-caricaturas,
+#tab-paisajes:checked ~ .galeria .panel-paisajes,
+#tab-anime:checked ~ .galeria .panel-anime{
+  display: grid;
+}
+
+.panel{
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.6rem;
+}
+
+/* ---------- Marcos tipo polaroid ---------- */
+.marco{
+  background: var(--blanco-polaroid);
+  border: 1px solid var(--papel-oscuro);
+  padding: 0.9rem 0.9rem 1.6rem;
+  box-shadow: 0 10px 22px -8px var(--sombra);
+}
+
+.marco img{
+  border: 1px solid var(--tinta);
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.marco figcaption{
+  margin-top: 0.7rem;
+  text-align: center;
+  font-size: 0.92rem;
+  color: var(--gris-lapiz);
+}
+
+.panel .marco:nth-child(odd){ transform: rotate(-1.4deg); }
+.panel .marco:nth-child(even){ transform: rotate(1.2deg); }
+.marco:hover{ transform: rotate(0deg) translateY(-3px); transition: transform 0.2s ease; }
+
+/* ---------- Formulario de contacto ---------- */
+.tarjeta-postal{
+  max-width: 560px;
+  background: var(--blanco-polaroid);
+  border: 2px solid var(--tinta);
+  padding: 2rem;
+  box-shadow: 8px 8px 0 var(--ocre);
+}
+
+.campo{
+  margin-bottom: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.campo label{
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.campo input,
+.campo textarea,
+.campo select{
+  font-family: var(--fuente-texto);
+  font-size: 1rem;
+  padding: 0.65rem 0.8rem;
+  border: 1.5px solid var(--gris-lapiz);
+  background: var(--papel);
+  color: var(--tinta);
+}
+
+.campo input:focus,
+.campo textarea:focus,
+.campo select:focus{
+  outline: 2px solid var(--pino);
+  outline-offset: 1px;
+  border-color: var(--pino);
+}
+
+.campo textarea{
+  resize: vertical;
+  min-height: 120px;
+}
+
+.boton-principal{
+  display: inline-block;
+  background: var(--sienna);
+  color: var(--papel);
+  border: none;
+  font-family: var(--fuente-titulo);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.75rem 1.6rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.boton-principal:hover{
+  background: var(--pino-oscuro);
+}
+
+/* ---------- Página "quién mantiene el sitio" ---------- */
+.perfil{
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+  background: var(--blanco-polaroid);
+  border: 1px solid var(--papel-oscuro);
+  padding: 1.8rem;
+  max-width: 700px;
+}
+
+.perfil-inicial{
+  flex: 0 0 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: var(--pino);
+  color: var(--papel);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--fuente-titulo);
+  font-size: 2.4rem;
+}
+
+.lista-datos{
+  list-style: none;
+  padding: 0;
+  margin: 1.4rem 0 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.lista-datos li strong{
+  color: var(--pino-oscuro);
+}
+
+/* ---------- Pie de página ---------- */
+.pie{
+  border-top: 1px solid var(--papel-oscuro);
+  padding: 1.6rem 0;
+  text-align: center;
+  color: var(--gris-lapiz);
+  font-size: 0.9rem;
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 780px){
+  .catalogo{
+    flex-direction: column;
+  }
+  .pestanas{
+    flex-direction: row;
+    flex: 1 1 auto;
+    width: 100%;
+    overflow-x: auto;
+  }
+  .pestanas label{
+    border-right-width: 2px;
+    border-bottom-width: 6px;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 600px){
+  .barra-nav .contenedor{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .enlaces-nav{
+    gap: 1.1rem;
+  }
+  .tarjeta-postal{
+    padding: 1.3rem;
+  }
+  .perfil{
+    flex-direction: column;
+    text-align: center;
+  }
+}
