@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Dibujos</title>
+    <link rel="stylesheet" href="estilosIA.css">
+</head>
+<body>
+
+    <!-- Barra de navegación -->
+    <nav class="navbar">
+        <h1 class="logo">Galería Vintage</h1>
+        <ul class="nav-links">
+            <li><a href="#catalogo">Catálogo de Dibujos</a></li>
+            <li><a href="#sobre-mi">Sobre la Autora</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main class="contenedor-principal">
+
+        <!-- Sección: Catálogo -->
+        <section id="catalogo" class="seccion">
+            <h2>Catálogo de Dibujos</h2>
+            <p class="descripcion">Seleccioná una categoría para ver las obras.</p>
+
+            <!-- Contenedor del sistema de pestañas (Radio Button Hack) -->
+            <div class="tabs-galeria">
+                <!-- Inputs ocultos para controlar el estado -->
+                <input type="radio" id="radio-caricaturas" name="categoria" checked>
+                <input type="radio" id="radio-paisajes" name="categoria">
+                <input type="radio" id="radio-anime" name="categoria">
+
+                <!-- Botones selectores -->
+                <div class="selectores">
+                    <label for="radio-caricaturas" class="btn-categoria">Caricaturas</label>
+                    <label for="radio-paisajes" class="btn-categoria">Paisajes</label>
+                    <label for="radio-anime" class="btn-categoria">Animé</label>
+                </div>
+
+                <!-- Contenido de las categorías -->
+                <div class="zona-central">
+                    <!-- Galería: Caricaturas -->
+                    <div class="galeria-contenido" id="galeria-caricaturas">
+                        <div class="marco-polaroid">
+                            <img src="imágenes/caricatura1.png" alt="Caricatura 1">
+                            <span class="epigrafe">Caricatura 1</span>
+                        </div>
+                        <div class="marco-polaroid">
+                            <img src="imágenes/caricatura2.png" alt="Caricatura 2">
+                            <span class="epigrafe">Caricatura 2</span>
+                        </div>
+                    </div>
+
+                    <!-- Galería: Paisajes -->
+                    <div class="galeria-contenido" id="galeria-paisajes">
+                        <div class="marco-polaroid">
+                            <img src="imágenes/paisaje1.png" alt="Paisaje 1">
+                            <span class="epigrafe">Paisaje 1</span>
+                        </div>
+                        <div class="marco-polaroid">
+                            <img src="imágenes/paisaje2.png" alt="Paisaje 2">
+                            <span class="epigrafe">Paisaje 2</span>
+                        </div>
+                    </div>
+
+                    <!-- Galería: Animé -->
+                    <div class="galeria-contenido" id="galeria-anime">
+                        <div class="marco-polaroid">
+                            <img src="imágenes/anime1.png" alt="Animé 1">
+                            <span class="epigrafe">Animé 1</span>
+                        </div>
+                        <div class="marco-polaroid">
+                            <img src="imágenes/anime2.png" alt="Animé 2">
+                            <span class="epigrafe">Animé 2</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Sobre quien mantiene el sitio -->
+        <section id="sobre-mi" class="seccion">
+            <h2>Sobre la Autora</h2>
+            <div class="perfil">
+                <p>¡Hola! Soy Julia, la desarrolladora detrás de este sitio. Combino mi formación en sistemas con una apreciación por el diseño acogedor, lo ecléctico y lo clásico. Este rincón está creado con mucho cuidado para exponer obras en un entorno estructurado, cálido y minimalista, utilizando exclusivamente HTML y CSS puro.</p>
+            </div>
+        </section>
+
+        <!-- Sección: Contacto -->
+        <section id="contacto" class="seccion">
+            <h2>Contacto</h2>
+            <form class="formulario-contacto" action="#" method="POST">
+                <div class="grupo-form">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+                </div>
+                <div class="grupo-form">
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                </div>
+                <div class="grupo-form">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Dejanos tu consulta o comentario..."></textarea>
+                </div>
+                <button type="submit" class="btn-enviar">Enviar Mensaje</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Galería de Dibujos. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
